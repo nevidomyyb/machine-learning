@@ -54,7 +54,7 @@ data_augmentation = keras.Sequential([
     keras.layers.RandomFlip('horizontal'),
     keras.layers.RandomRotation(0.2),
     keras.layers.RandomZoom(0.2),
-
+    keras.layers.RandomTranslation(0.3, 0.3)
 ])
 
 # Aplicar a transformação de aumento de dados ao dataset de treinamento
