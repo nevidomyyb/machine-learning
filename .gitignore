@@ -1,2 +1,6 @@
 venv
 catsxdogs
+testset/*/*.png
+trainset/*/*.png
+*.png
+output
