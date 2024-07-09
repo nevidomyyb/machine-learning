@@ -4,7 +4,6 @@ import time
 
 BASE_DIR_TRAIN = "./trainset"
 BASE_DIR_TEST = "./testset"
-INITS_FILE = ["Trian", "Squa", "Penta", "Hepta", "Hexa", "Octa", "Nona", "Circl", "Sta"]
 dirs = {
         "Triangule":f"{BASE_DIR_TRAIN}/triangle/",
         "Square":f"{BASE_DIR_TRAIN}/square/",
