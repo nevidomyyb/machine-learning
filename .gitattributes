@@ -1,1 +1,2 @@
+*.h5 filter=lfs diff=lfs merge=lfs -text
 final-challange-m2/final_challange_m2/geometry-tl.h5 filter=lfs diff=lfs merge=lfs -text
