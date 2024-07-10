@@ -4,3 +4,4 @@ testset/*/*.png
 trainset/*/*.png
 *.png
 output
+.venv
