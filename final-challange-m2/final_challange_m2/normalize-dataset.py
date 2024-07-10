@@ -5,7 +5,7 @@ import time
 BASE_DIR_TRAIN = "./trainset"
 BASE_DIR_TEST = "./testset"
 dirs = {
-        "Triangule":f"{BASE_DIR_TRAIN}/triangle/",
+        
         "Square":f"{BASE_DIR_TRAIN}/square/",
         "Pentagon":f"{BASE_DIR_TRAIN}/pentagon/",
         "Hexagon":f"{BASE_DIR_TRAIN}/hexagon/",
@@ -17,7 +17,7 @@ dirs = {
     }
 
 dirs_test = {
-        "Triangule":f"{BASE_DIR_TEST}/triangle/",
+        
         "Square":f"{BASE_DIR_TEST}/square/",
         "Pentagon":f"{BASE_DIR_TEST}/pentagon/",
         "Hexagon":f"{BASE_DIR_TEST}/hexagon/",
@@ -40,7 +40,7 @@ def sendImageToTest(file: str, source: str, type_: str):
 
 def sendImages():
     all_files = [f for f in os.listdir("./output/") if os.path.isfile(os.path.join("./output/", f))]
-    triangules = [f for f in all_files if "Triangule" in f]
+    
     squares = [f for f in all_files if "Square" in f]
     pentagons = [f for f in all_files if "Pentagon" in f]
     hexagons = [f for f in all_files if "Hexagon" in f]
@@ -49,7 +49,7 @@ def sendImages():
     nonagons = [f for f in all_files if "Nonagon" in f]
     circles = [f for f in all_files if "Circle" in f]
     stars = [f for f in all_files if "Star" in f]
-    files = [triangules, squares, pentagons, hexagons, heptagons, octagons, nonagons, circles, stars]
+    files = [squares, pentagons, hexagons, heptagons, octagons, nonagons, circles, stars]
     for files_type in files:
         #files_type = List of all files of a type
         i = 0
