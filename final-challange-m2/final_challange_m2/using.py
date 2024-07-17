@@ -1,5 +1,4 @@
 import numpy as np
-from keras.preprocessing import image
 from keras.models import load_model
 import os
 import tensorflow as tf
@@ -20,7 +19,6 @@ train_dataset = tf.keras.utils.image_dataset_from_directory(
 class_names = train_dataset.class_names
 model = load_model('./geometry-tl.h5')
 
-
 def test():
     all_files = [f for f in os.listdir("./output/") if os.path.isfile(os.path.join("./output/", f))]
     squares = [f for f in all_files if "Square" in f]
@@ -37,7 +35,7 @@ def test():
         acertos = 0
         total = 0
         for i, file in enumerate(files_type):
-            if i == 50:
+            if i == 200:
                 print(".", end="\n")
                 break
             else:
