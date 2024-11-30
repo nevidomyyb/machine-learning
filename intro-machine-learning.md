@@ -14,7 +14,7 @@ Feito com que um humano converse com uma IA sem saber disso, a fim de testar se 
 
 ### Qual relação entre Machine Learning (ML) e Inteligência Artificial (IA) ?
 
-Por meio do ML obtemos ou nõa uma IA restrita. O ML é a etapa de aprendizado de máquina, através de uma base de dados ( treinamento ) que pode resultar em uma IA
+Por meio do ML obtemos ou não uma IA restrita. O ML é a etapa de aprendizado de máquina, através de uma base de dados ( treinamento ) que pode resultar em uma IA
 
 ---
 

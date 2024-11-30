@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "final-challange-m2"
+name = "geometry-problem-ml"
 version = "0.1.0"
 description = ""
 authors = ["Pedro Cunha <idk.pedroc@gmail.com>"]
