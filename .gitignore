@@ -5,3 +5,5 @@ trainset/*/*.png
 *.png
 output
 .venv
+*.pyc
+*.h5
