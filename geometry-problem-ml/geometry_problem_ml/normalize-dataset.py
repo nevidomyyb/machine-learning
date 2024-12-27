@@ -30,11 +30,13 @@ dirs_test = {
 
 def sendImageToTrain(file: str, source: str, type_: str):
     destination_file = os.path.join(dirs.get(type_), file)
+    os.makedirs(os.path.dirname(destination_file), exist_ok=True)
     shutil.move(source, destination_file)
     print(f"File: {file} moved to trainset")
     
 def sendImageToTest(file: str, source: str, type_: str):
     destination_file = os.path.join(dirs_test.get(type_), file)
+    os.makedirs(os.path.dirname(destination_file), exist_ok=True)
     shutil.move(source, destination_file)
     print(f"File: {file} mooved to testset")
 

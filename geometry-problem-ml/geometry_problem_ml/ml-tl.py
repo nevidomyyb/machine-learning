@@ -1,11 +1,18 @@
 import warnings
 warnings.filterwarnings('always')
 warnings.filterwarnings('ignore')
-import keras
+from tensorflow import keras
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Model
 from keras.layers import Dense
 import time
+from pathlib import Path
+
+base_dir = Path(__file__).parent
+
+
+TESTSET_DIR = base_dir/ "testset"
+TRAINSET_DIR = base_dir/"trainset"
 
 init_time = time.time()
 
@@ -13,7 +20,7 @@ base_model_inceptionv3 = keras.applications.InceptionV3(weights='imagenet', incl
 x = base_model_inceptionv3.output
 x = keras.layers.GlobalAveragePooling2D()(x)
 x = Dense(1024, activation='relu')(x)
-predictions = Dense(9, activation='softmax')(x)
+predictions = Dense(8, activation='softmax')(x)
 model = Model(inputs=base_model_inceptionv3.input, outputs=predictions)
 
 for layer in base_model_inceptionv3.layers:
@@ -25,14 +32,14 @@ train_datagen = ImageDataGenerator(rescale=1./255)
 validation_datagen = ImageDataGenerator(rescale=1./255)
 
 train_generator = train_datagen.flow_from_directory(
-    "./trainset/",
+    base_dir/"trainset",
     target_size=(150, 150),
     batch_size=32,
     class_mode="categorical"
 )
 
 validation_generator = validation_datagen.flow_from_directory(
-    "./testset/",
+    base_dir/"testset",
     target_size=(150, 150),
     batch_size=32,
     class_mode="categorical"

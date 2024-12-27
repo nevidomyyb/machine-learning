@@ -9,13 +9,16 @@ import tensorflow as tf
 from tensorflow import keras
 from keras import layers
 from keras.src.models import Sequential
+from pathlib import Path
+
+base_dir = Path(__file__).parent
 
 
-TESTSET_DIR = "./testset/"
-TRAINSET_DIR = "./trainset/"
+TESTSET_DIR = base_dir/ "testset"
+TRAINSET_DIR = base_dir/"trainset"
 BATCH_SIZE = 32
-IMG_HEIGHT = 180
-IMG_WIDTH = 180
+IMG_HEIGHT = 150
+IMG_WIDTH = 150
 
 train_dataset = tf.keras.utils.image_dataset_from_directory(
     TRAINSET_DIR,

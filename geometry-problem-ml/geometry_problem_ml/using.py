@@ -2,9 +2,13 @@ import numpy as np
 from keras.models import load_model
 import os
 import tensorflow as tf
+from pathlib import Path
 
-TESTSET_DIR = "./testset/"
-TRAINSET_DIR = "./trainset/"
+base_dir = Path(__file__).parent
+
+
+TESTSET_DIR = base_dir/ "testset"
+TRAINSET_DIR = base_dir/"trainset"
 BATCH_SIZE = 32
 IMG_HEIGHT = 150
 IMG_WIDTH = 150
@@ -17,10 +21,11 @@ train_dataset = tf.keras.utils.image_dataset_from_directory(
 )
 
 class_names = train_dataset.class_names
-model = load_model('./geometry-tl.h5')
+print(class_names)
+model = load_model(base_dir/'geometry-tl.h5')
 
 def test():
-    all_files = [f for f in os.listdir("./output/") if os.path.isfile(os.path.join("./output/", f))]
+    all_files = [f for f in os.listdir(base_dir/"output") if os.path.isfile(os.path.join(base_dir/"output", f))]
     squares = [f for f in all_files if "Square" in f]
     pentagons = [f for f in all_files if "Pentagon" in f]
     hexagons = [f for f in all_files if "Hexagon" in f]
@@ -41,7 +46,8 @@ def test():
             else:
                 print(".", end="")
             image_type = file[0:file.find("_")]
-            full_path = os.path.join("./output/", file)
+            full_path = os.path.join(base_dir/"output", file)
+            # img = tf.keras.utils.load_img(full_path, target_size=(150, 150))
             img = tf.keras.utils.load_img(full_path, target_size=(150, 150))
             img_array = tf.keras.utils.img_to_array(img)
             img_array = tf.expand_dims(img_array, 0)

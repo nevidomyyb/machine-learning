@@ -24,6 +24,7 @@ tensorflow-io-gcs-filesystem = [
     { version = "< 0.32.0", markers = "platform_system == 'Windows'" }
 ]
 scipy = "^1.14.0"
+matplotlib = "^3.9.3"
 
 
 [build-system]
